@@ -53,7 +53,6 @@ var almacen = {
 		almacen.borrarReservas();
 	},
 	enviaReserva: function (th, pr, ha, di){
-		navigator.notification.alert('Estoy en el metodo',null,'Exito','Aceptar');
 					$.ajax({
 						method: "POST",
 						url: "https://192.168.0.7/prueba/validaDatos.php",
@@ -62,7 +61,7 @@ var almacen = {
 							alert("ajax connection error");
 						}
 					}).done(function( respuestaServer ) {
-							alert(respuestaServer.msg);
+							navigator.notification.alert(respuestaServer[1] + ' ' + respuestaServer[0]);
 							/*if(respuestaServer.valor==1){ 
 								almacen.crearHistorial(th,ha,pr,di);
                 				window.location.href = '#home';
