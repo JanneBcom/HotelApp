@@ -43,9 +43,7 @@ var almacen = {
 				var th = r.rows.item(i).th;
 				var pr = r.rows.item(i).pr;
 				var ha = r.rows.item(i).ha;
-				var di = r.rows.item(i).di;
-				
-				almacen.enviaReserva(th,pr,ha,di);
+				var di = r.rows.item(i).di;			//almacen.enviaReserva(th,pr,ha,di);
 				
 				//Enviar reserva al servidor
 			}
@@ -55,23 +53,24 @@ var almacen = {
 		almacen.borrarReservas();
 	},
 	enviaReserva: function (th, pr, ha, di){
+		navigator.notification.alert('Estoy en el metodo',null,'Exito','Aceptar');
 					$.ajax({
 						method: "POST",
-						url: "http://192.168.0.2/prueba/validaDatos.php",
+						url: "https://192.168.0.7/prueba/validaDatos.php",
 						data: { tip: th, per: pr, nhab: ha, dia:di },
 						error: function(){
 							alert("ajax connection error");
 						}
 					}).done(function( respuestaServer ) {
 							alert(respuestaServer.msg);
-							if(respuestaServer.valor==1){ 
+							/*if(respuestaServer.valor==1){ 
 								almacen.crearHistorial(th,ha,pr,di);
                 				window.location.href = '#home';
 							}
-							
+						*/	
         				});
 	},
-	crearHistorial: function(th,ha,pr,di){
+/*	crearHistorial: function(th,ha,pr,di){
 		almacen.db = window.openDatabase("Hitorial", "1.0","Historial",200000);
 		almacen.th2 = th;
 		almacen.pr2 = pr;
@@ -107,5 +106,5 @@ var almacen = {
 	},
 	confirmarHistorial: function(){
 		navigator.notification.alert("Historial Actualizado", null, "Historial","Aceptar");
-	}
+	}*/
 };

@@ -16,7 +16,7 @@ var fn = {
 		
     },
     estaRegistrado: function(){
-		if(window.localStorage.getItem('uuid')!=undefined)
+		if(window.localStorage.getItem('uuid') != undefined)
 			return true;
 		else
 			return false;
@@ -54,7 +54,7 @@ var fn = {
 	seleccionarHab: function(){
 		$(this).parents('ul').find('a').css("background-color",""); //obtiene todos los ul y todas las a, se les quita el backgroundcolor
 		$('#nr1').attr("th",$(this).text());
-		$(this).css("background-color","##9c1297");//le pone el color a la seleccionada
+		$(this).css("background-color","#009900");//le pone el color a la seleccionada
 	},
 	nr1Siguiente: function(){
 		if($(this).index() == 1 && $('#nr1').attr('th') != undefined){ //si se preciono siguiente y se selecciono habitacion se pasa a la sig pagina
@@ -71,7 +71,8 @@ var fn = {
 		var di=$('#resDia').val();
 	
 		if(conex.isConnected())//Detectar si está conectado a internet
-			almacen.enviaReserva(th,pr,ha,di);
+			alert("tengo internet");
+		almacen.enviaReserva(th,pr,ha,di);
 		else//sino
 			almacen.guardarReserva(th,pr,ha,di);
 	}
