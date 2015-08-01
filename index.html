@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HotelApp</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div data-role="page" id="home">
+            <div data-role="header"><h1>HotelApp</h1></div>
+            <div role="main" class="ui-content">
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="#nr1">Nueva Reserva</a></li>
+                    <li><a href="#historial">Historial</a></li>
+                    <li><a href="#priv">Privacidad</a></li>
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <span>Todos los derechos reservados</span>
+                <a href="#nosotros" data-transition="slideup">Nosotros</a>
+            </div>
+        </div>
+        <div data-role="page" id="nosotros">
+            <div data-role="header">
+                <h1>Nosotros</h1>
+                <a href="#" data-rel="back" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all">Atrás</a>
+            </div>
+            <div role="main" class="ui-content">
+                <p>To make a list filterable, simply add the data-filter="true" attribute to the list. The framework will then append a search box above the list and add the behavior to filter out list items that don't contain the current search string as the user types. The input's placeholder text defaults to "Filter items...". To configure the placeholder text in the search input, use the data-filter-placeholder attribute. By default the search box will inherit its theme from its parent. The search box theme can be configured using the data attribute data-filter-theme on your listview.</p>
+            </div>
+        </div>
+        <div data-role="page" id="priv">
+            <div data-role="header">
+                <h1>Privacidad</h1>
+                <a href="#" data-rel="back">Atrás</a>
+            </div>
+            <div role="main" class="ui-content">
+                <p>To make a list filterable, simply add the data-filter="true" attribute to the list. The framework will then append a search box above the list and add the behavior to filter out list items that don't contain the current search string as the user types. The input's placeholder text defaults to "Filter items...". To configure the placeholder text in the search input, use the data-filter-placeholder attribute. By default the search box will inherit its theme from its parent. The search box theme can be configured using the data attribute data-filter-theme on your listview.</p>
+            </div>
+        </div>
+		<div data-role="page" id="historial">
+			<div data-role="header">
+				<h1>Historial</h1>
+				<a href="#" data-rel="back">Regresa</a>
+			</div>
+			<div data-role="main" class="ui-content">
+			</div>
+		</div>
+        <div data-role="page" id="reg">
+            <div data-role="header">
+                <h1>Registro</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <ul data-role="listview">
+                    <li><input type="text" placeholder="Nombre" id="regNom"></li>
+                    <li><input type="email" placeholder="Correo electrónico" id="regMail"></li>
+                    <li><input type="tel" placeholder="Teléfono" id="regTel"></li>
+                    <li><a href="#">Tomar Foto</a></li>
+                    <li id="fotoTomada"></li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#" class="ui-btn-active">Registrar</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div>
+        </div>
+		
+		 <div data-role="page" id="nr1">
+            <div data-role="header">
+                <h1>Reserva</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <ul data-role="listview">
+					<li data-role="list-divider">Seleccione el Tipo de Habitación:</li>
+                    <li><a href="#">Sencilla</a></li>
+                    <li><a href="#">Doble</a></li>
+					<li><a href="#">Suite</a></li>
+                    
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#" data-rel="back">Cancelar</a></li>
+						<li><a href="#" class="ui-btn-active">Siguiente</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div>
+        </div>
+		
+		<div data-role="page" id="nr2">
+            <div data-role="header">
+                <h1>Extras</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <ul data-role="listview">
+					<li data-role="list-divider">Seleccione datos Extras:</li>
+                    <li>Personas:
+						<select id="resPer">
+							<option>1</option>	
+							<option>2</option>	
+							<option>3</option>	
+							<option>4</option>	
+							<option>5</option>	
+						</select></li>
+                    <li>Habitaciones:
+						<select id="resHab">
+							<option>1</option>	
+							<option>2</option>	
+							<option>3</option>	
+							<option>4</option>	
+							<option>5</option>	
+						</select>
+					</li>
+					<li>Días:
+						<select id="resDia">
+							<option>1</option>	
+							<option>2</option>	
+							<option>3</option>	
+							<option>4</option>	
+							<option>5</option>
+						</select>
+					</li>
+                    
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+						<li><a href="#" class="ui-btn-active" id="resSend">Reservar</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div>
+        </div>
+        
+        <script src="phonegap.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+		<script src="js/reservaciones.js"></script>
+        <script src="js/actions.js"></script>
+        <script src="js/API/mediaCapture.js"></script>
+        <script src="js/API/fileTransfer.js"></script>
+		<script src="js/API/device.js"></script>
+        <script src="js/API/connection.js"></script>
+    </body>
+</html>
