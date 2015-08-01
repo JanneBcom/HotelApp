@@ -52,9 +52,9 @@ var fn = {
         });
     },
 	seleccionarHab: function(){
-		$(this).parents('ul').find('a').css("background-color",""); //obtiene todos los ul y todas las a, se les quita el backgroundcolor
+		$(this).parents('ul').find('a').css("background",""); //obtiene todos los ul y todas las a, se les quita el backgroundcolor
 		$('#nr1').attr("th",$(this).text());
-		$(this).css("background-color","#00aa00");//le pone el color a la seleccionada
+		$(this).css("background","#e16f71");//le pone el color a la seleccionada
 	},
 	nr1Siguiente: function(){
 		if($(this).index() == 1 && $('#nr1').attr('th') != undefined){ //si se preciono siguiente y se selecciono habitacion se pasa a la sig pagina
@@ -71,8 +71,7 @@ var fn = {
 		var di=$('#resDia').val();
 	
 		if(conex.isConnected())//Detectar si está conectado a internet
-			alert("tengo internet");
-		almacen.enviaReserva(th,pr,ha,di);
+			almacen.enviaReserva(th,pr,ha,di);
 		else//sino
 			almacen.guardarReserva(th,pr,ha,di);
 	}
