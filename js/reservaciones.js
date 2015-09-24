@@ -55,13 +55,13 @@ var almacen = {
 	enviaReserva: function (th, pr, ha, di){
 					$.ajax({
 						method: "POST",
-						url: "https://192.168.0.7/prueba/validaDatos.php",
+						url: "https://192.168.1.67/prueba/validaDatos.php",
 						data: { tip: th, per: pr, nhab: ha, dia:di },
 						error: function(){
 							alert("ajax connection error");
 						}
 					}).done(function( respuestaServer ) {
-							navigator.notification.alert(respuestaServer[1] + ' ' + respuestaServer[0]);
+							navigator.notification.alert(respuestaServer[1],"null","Respuesta","Aceptar");
 							/*if(respuestaServer.valor==1){ 
 								almacen.crearHistorial(th,ha,pr,di);
                 				window.location.href = '#home';
