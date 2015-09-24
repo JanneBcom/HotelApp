@@ -43,7 +43,8 @@ var almacen = {
 				var th = r.rows.item(i).th;
 				var pr = r.rows.item(i).pr;
 				var ha = r.rows.item(i).ha;
-				var di = r.rows.item(i).di;			//almacen.enviaReserva(th,pr,ha,di);
+				var di = r.rows.item(i).di;			
+				almacen.enviaReserva(th,pr,ha,di);
 				
 				//Enviar reserva al servidor
 			}
@@ -61,7 +62,7 @@ var almacen = {
 							alert("ajax connection error");
 						}
 					}).done(function( respuestaServer ) {
-							navigator.notification.alert(respuestaServer[1],"null","Respuesta","Aceptar");
+							navigator.notification.alert("Encuestas enviadas al Servidor","null","Respuesta","Aceptar");
 							/*if(respuestaServer.valor==1){ 
 								almacen.crearHistorial(th,ha,pr,di);
                 				window.location.href = '#home';
