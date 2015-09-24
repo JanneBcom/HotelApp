@@ -24,6 +24,6 @@ var ft = {
         options.mimeType = "image/jpeg";
 
         var ft2 = new FileTransfer();
-        ft2.upload(path,"https://192.168.1.67/prueba_2/test.php", ft.win, ft.fail, options);
+        ft2.upload(path,"http://192.168.1.67/prueba_2/test.php", ft.win, ft.fail, options);
     }
 };
